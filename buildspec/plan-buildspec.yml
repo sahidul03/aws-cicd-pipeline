@@ -1,0 +1,10 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - terraform init -backend-config="backend-config.config"
+      - terraform validate
+
+  build:
+    commands:
+      - terraform plan
